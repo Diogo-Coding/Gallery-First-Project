@@ -24,21 +24,21 @@
 			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
 		</div>
 		<div class="carousel-inner">
-			<div class="carousel-item active" style="background-image: url('https://source.unsplash.com/RCAhiGJsUUE/1920x1080')">
+			<div class="carousel-item active" style="background-image: url('/images/bg-01.jpg')">
 			<div class="carousel-caption">
 				<h5>Galeria</h5>
 				<p>Crea tu propia galeria</p>
 			</div>
 			</div>
 			<!-- |----------------------------------------------------------| -->
-			<div class="carousel-item" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1920x1080')">
+			<div class="carousel-item" style="background-image: url('/images/bg-02.jpg')">
 			<div class="carousel-caption">
 				<h5>Almacena</h5>
 				<p>Unete y sube tus fotos aqui, nunca las perderas en nuestro almacenamiento</p>
 			</div>
 			</div>
 			<!-- |----------------------------------------------------------| -->
-			<div class="carousel-item" style="background-image: url('https://source.unsplash.com/lHGeqh3XhRY/1920x1080')">
+			<div class="carousel-item" style="background-image: url('/images/bg-03.jpeg')">
 			<div class="carousel-caption">
 				<h5>TOTALMENTE SEGURO, SEGURISIMO</h5>
 				<p>Aqui la seguridad lo primero, 100% fiable este lugar</p>
