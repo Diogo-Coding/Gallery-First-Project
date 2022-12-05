@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="js/jquery-3.3.1.slim.min.js"></script>
-	<title>Galeria</title>
+	<title>Galeria Adrian y Diogo</title>
 </head>
 <body>
 	<?php include('includes/header.php')?>
