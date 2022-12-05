@@ -30,12 +30,14 @@
 				<p>Crea tu propia galeria</p>
 			</div>
 			</div>
+			<!-- |----------------------------------------------------------| -->
 			<div class="carousel-item" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1920x1080')">
 			<div class="carousel-caption">
 				<h5>Almacena</h5>
 				<p>Unete y sube tus fotos aqui, nunca las perderas en nuestro almacenamiento</p>
 			</div>
 			</div>
+			<!-- |----------------------------------------------------------| -->
 			<div class="carousel-item" style="background-image: url('https://source.unsplash.com/lHGeqh3XhRY/1920x1080')">
 			<div class="carousel-caption">
 				<h5>TOTALMENTE SEGURO, SEGURISIMO</h5>
