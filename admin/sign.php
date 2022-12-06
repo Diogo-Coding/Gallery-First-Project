@@ -12,11 +12,14 @@
     <title>Sign up page</title>
 </head>
 <body>
+    <?php 
+        $page = $_GET
+    ?>
     <?php include('includes/header.php')?>
     <main>
         <div class="sign-container" id="container">
             <div class="form-container sign-up-container">
-                <form action="#" class="sign-form">
+                <form action="#" class="sign-form" method="POST">
                     <h1 class="sing-h1">Create Account</h1>
                     <!-- Contenedor social
                     <div class="social-container">
@@ -34,7 +37,7 @@
                 </form>
             </div>
             <div class="form-container sign-in-container">
-                <form action="#" class="sign-form">
+                <form action="#" class="sign-form" method="POST">
                     <h1 class="sing-h1">Sign in</h1>
                     <!-- Contenedor social
                     <div class="social-container">
