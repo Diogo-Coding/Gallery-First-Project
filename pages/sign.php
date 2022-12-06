@@ -26,11 +26,11 @@
                     </div>
                     <span class="signSpan">or use your email for registration</span> -->
                     <p></p>
-                    <input class="input" type="text" placeholder="Name" />
-                    <input class="input" type="email" placeholder="Email" />
-                    <input class="input" type="password" placeholder="Password" />
+                    <input class="input" type="text" placeholder="Name" required/>
+                    <input class="input" type="email" placeholder="Email" required/>
+                    <input class="input" type="password" placeholder="Password" required/>
                     <p></p>
-                    <button class="sign">Sign Up</button>
+                    <input type="submit" class="sign" value="Sign Up">
                 </form>
             </div>
             <div class="form-container sign-in-container">
@@ -44,11 +44,11 @@
                     </div>
                     <span class="signSpan">or use your account</span> -->
                     <p></p>
-                    <input class="input" type="email" placeholder="Email" />
-                    <input class="input" type="password" placeholder="Password" />
+                    <input class="input" type="email" placeholder="Email" required/>
+                    <input class="input" type="password" placeholder="Password" required/>
                     <!-- <a href="#" class="link">Forgot your password?</a> -->
                     <p></p>
-                    <button class="sign">Sign In</button>
+                    <input type="submit" class="sign" value="Sign In">
                 </form>
             </div>
             <!-- Olvidarse de esto
