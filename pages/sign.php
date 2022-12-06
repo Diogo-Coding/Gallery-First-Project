@@ -26,9 +26,9 @@
                     </div>
                     <span class="signSpan">or use your email for registration</span> -->
                     <p></p>
-                    <input class="input" type="text" placeholder="Name" required/>
-                    <input class="input" type="email" placeholder="Email" required/>
-                    <input class="input" type="password" placeholder="Password" required/>
+                    <input class="input" type="text" placeholder="Name" name="create-name" required/>
+                    <input class="input" type="email" placeholder="Email" name="create-Email" required/>
+                    <input class="input" type="password" placeholder="Password" name="create-password" required/>
                     <p></p>
                     <input type="submit" class="sign" value="Sign Up">
                 </form>
@@ -44,8 +44,8 @@
                     </div>
                     <span class="signSpan">or use your account</span> -->
                     <p></p>
-                    <input class="input" type="email" placeholder="Email" required/>
-                    <input class="input" type="password" placeholder="Password" required/>
+                    <input class="input" type="email" placeholder="Email" name="log-in-email" required/>
+                    <input class="input" type="password" placeholder="Password" name="log-in-password" required/>
                     <!-- <a href="#" class="link">Forgot your password?</a> -->
                     <p></p>
                     <input type="submit" class="sign" value="Sign In">
