@@ -19,32 +19,46 @@
 			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
 			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-			<!-- Para añadir mas imagenes <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button> -->
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
 		</div>
 		<div class="carousel-inner">
-			<div class="carousel-item active" style="background-image: url('/images/bg-01.jpg')">
+			<div class="carousel-item active" style="background-image: url('/images/bg-04.jpg')">
 				<div class="carousel-caption">
 					<h5>Galeria</h5>
 					<p>Crea tu propia galeria</p>
 				</div>
 			</div>
 			<!-- |----------------------------------------------------------| -->
-			<div class="carousel-item" style="background-image: url('/images/bg-02.jpg')">
+			<div class="carousel-item" style="background-image: url('/images/bg-05.jpg')">
 				<div class="carousel-caption">
-					<h5>Almacena</h5>
+					<h5>Almacena tus fotos</h5>
 					<p>Unete y sube tus fotos aqui, nunca las perderas en nuestro almacenamiento</p>
 				</div>
 			</div>
 			<!-- |----------------------------------------------------------| -->
-			<div class="carousel-item" style="background-image: url('/images/bg-03.jpeg')">
+			<div class="carousel-item" style="background-image: url('/images/bg-06.jpg')">
 				<div class="carousel-caption">
 					<h5>TOTALMENTE SEGURO, SEGURISIMO</h5>
 					<p>Aqui la seguridad lo primero, 100% fiable este lugar</p>
 				</div>
 			</div>
 			<!-- |----------------------------------------------------------| -->
+			<div class="carousel-item" style="background-image: url('/images/bg-07.jpg')">
+				<div class="carousel-caption">
+					<h5>Suelo antartico</h5>
+					<p>Muestra tus imagenes de mayor calidad</p>
+				</div>
+			</div>
+			<!-- |----------------------------------------------------------| -->
+			<div class="carousel-item" style="background-image: url('/images/bg-09.jpg')">
+				<div class="carousel-caption">
+					<h5>New York Sign Build</h5>
+					<p>Demuestra a la gente tu talento</p>
+				</div>
+			</div>
 			<!-- Para añadir mas imagenes provenientes de carpeta /images
-			<div class="carousel-item" style="background-image: url('/images/bg-03.jpeg')">
+			<div class="carousel-item" style="background-image: url('/images/bg-07.jpeg')">
 				<div class="carousel-caption">
 					<h5>TOTALMENTE SEGURO, SEGURISIMO</h5>
 					<p>Aqui la seguridad lo primero, 100% fiable este lugar</p>
