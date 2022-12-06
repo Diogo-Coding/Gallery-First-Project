@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link rel="stylesheet" href="css/sign.css">
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <link rel="stylesheet" href="../css/sign.css">
+    <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <title>Sign up page</title>
 </head>
 <body>
-    <?php 
-        $page = $_GET
-    ?>
-    <?php include('includes/header.php')?>
+    <?php include('../includes/header.php')?>
     <main>
         <div class="sign-container" id="container">
             <div class="form-container sign-up-container">
-                <form action="#" class="sign-form" method="POST">
+                <form action="sign-up.php" class="sign-form" method="POST">
                     <h1 class="sing-h1">Create Account</h1>
                     <!-- Contenedor social
                     <div class="social-container">
@@ -37,7 +34,7 @@
                 </form>
             </div>
             <div class="form-container sign-in-container">
-                <form action="#" class="sign-form" method="POST">
+                <form action="sign-in.php" class="sign-form" method="POST">
                     <h1 class="sing-h1">Sign in</h1>
                     <!-- Contenedor social
                     <div class="social-container">
@@ -71,6 +68,6 @@
             </div> -->
         </div>
     </main>
-    <?php include('includes/footer.php') ?>
+    <?php include('../includes/footer.php') ?>
 </body>
 </html>

@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/admin/upload.php">Upload</a>
+          <a class="nav-link" href="/pages/logged-in/upload.php">Upload</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/admin/gallery.php">See Gallery</a>
+          <a class="nav-link" href="/pages/logged-in/gallery.php">See Gallery</a>
         </li>
       </ul>
     </div>
