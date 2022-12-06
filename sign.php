@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="stylesheet" href="css/sign.css">
     <script src="js/jquery-3.3.1.slim.min.js"></script>
-    <!-- <script src="js/sign.js"></script> -->
     <title>Sign up page</title>
 </head>
 <body>
@@ -19,7 +18,8 @@
             <div class="form-container sign-up-container">
                 <form action="#" class="sign-form">
                     <h1 class="sing-h1">Create Account</h1>
-                    <!-- <div class="social-container">
+                    <!-- Contenedor social
+                    <div class="social-container">
                         <a href="#" class="social link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social link"><i class="fab fa-google-plus-g"></i></a>
                         <a href="#" class="social link"><i class="fab fa-linkedin-in"></i></a>
@@ -36,7 +36,8 @@
             <div class="form-container sign-in-container">
                 <form action="#" class="sign-form">
                     <h1 class="sing-h1">Sign in</h1>
-                    <!-- <div class="social-container">
+                    <!-- Contenedor social
+                    <div class="social-container">
                         <a href="#" class="social link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social link"><i class="fab fa-google-plus-g"></i></a>
                         <a href="#" class="social link"><i class="fab fa-linkedin-in"></i></a>
@@ -50,7 +51,8 @@
                     <button class="sign">Sign In</button>
                 </form>
             </div>
-            <!-- <div class="overlay-container">
+            <!-- Olvidarse de esto
+            <div class="overlay-container">
                 <div class="overlay">
                     <div class="overlay-panel overlay-left">
                         <h1 class="sing-h1">Welcome Back!</h1>
