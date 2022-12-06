@@ -27,7 +27,7 @@
                     <span class="signSpan">or use your email for registration</span> -->
                     <p></p>
                     <input class="input" type="text" placeholder="Name" name="create-name" required/>
-                    <input class="input" type="email" placeholder="Email" name="create-Email" required/>
+                    <input class="input" type="email" placeholder="Email" name="create-email" required/>
                     <input class="input" type="password" placeholder="Password" name="create-password" required/>
                     <p></p>
                     <input type="submit" class="sign" value="Sign Up">
