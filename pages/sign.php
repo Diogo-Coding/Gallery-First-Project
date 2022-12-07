@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="stylesheet" href="../css/sign.css">
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
-    <title>Sign up page</title>
+    <title>Sign in/up page</title>
 </head>
 <body>
     <?php include('../includes/header.php')?>
