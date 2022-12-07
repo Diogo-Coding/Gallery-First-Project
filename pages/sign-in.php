@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sing in</title>
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/log-indicators.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <title>Sign in</title>
 </head>
 <body>
     <?php
-        $email = $_POST['log-in-email'];
-        $password = $_POST['log-in-password'];
+        $logEmail = $_POST['log-in-email'];
+        $logPassword = $_POST['log-in-password'];
 
-        if(!(isset($email) && isset($password))){
+        if(isset($logEmail) && isset($logPassword)){
             include('includes/database-conn.php');
 
-            $sql = "SELECT * FROM authors WHERE email ='" . $email . "' AND password='" . $password . "'";
+            $sql = "SELECT * FROM `authors` WHERE email = '$logEmail' AND password='$logPassword'";
             $result = $link->query($sql);
 
-            if(!$result){
+            if($result){
                 include('../includes/header.php');
-                include('includes/log-in-error.php');
+                include('includes/log-success.php');
                 include('../includes/footer.php');
             }
 
@@ -27,7 +31,7 @@
         } else {
             include('includes/database-conn.php');
             include('../includes/header.php');
-            include('includes/log-in-error.php');
+            include('includes/log-success.php');
             include('../includes/footer.php');
             include('includes/database-close.php');
         }
