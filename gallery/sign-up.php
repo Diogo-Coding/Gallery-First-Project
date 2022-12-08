@@ -2,6 +2,8 @@
     $logEmail = $_POST['log-in-email'];
     if(!isset($_COOKIE['userEmail'])){
         setcookie('userEmail', $logEmail);
+    } else {
+        setcookie('userEmail', $logEmail);
     }
 ?>
 <!DOCTYPE html>
