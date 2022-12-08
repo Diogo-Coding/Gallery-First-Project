@@ -16,11 +16,11 @@
         <div class="upload-container" id="container">
             <div class="form-container upload-up-container">
                 <form action="upload-up.php" class="upload-form" method="POST">
-                    <h1 class="upload-h1">Create Account</h1>
+                    <h1 class="upload-h1">Upload Image</h1>
                     <p></p>
-                    <input class="input" type="text" placeholder="Name" name="create-name" required/>
-                    <input class="input" type="email" placeholder="Email" name="create-email" required/>
-                    <input class="input" type="password" placeholder="Password" name="create-password" required/>
+                    <input class="input" type="text" placeholder="Name" name="image-name" required/>
+                    <input class="input" type="file" name="image" required/>
+                    <input class="input" type="text" placeholder="Text" name="image-text" required/>
                     <p></p>
                     <input type="submit" class="upload" value="Upload" name="submit">
                 </form>
