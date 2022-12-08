@@ -16,11 +16,12 @@
         <div class="upload-container" id="container">
             <div class="form-container upload-up-container">
                 <form action="upload-up.php" class="upload-form" method="POST">
+                    <p></p>
                     <h1 class="upload-h1">Upload Image</h1>
                     <p></p>
                     <input class="input" type="text" value="<?=$author?>" name="image-author" disabled/>
                     <input class="input" type="text" placeholder="Name" name="image-name" required/>
-                    <input class="input" type="file" name="image" required/>
+                    <input class="input" type="file" name="image" required accept="image/*"/>
                     <input class="input" type="text" placeholder="Text" name="image-text" required/>
                     <p></p>
                     <input type="submit" class="upload" value="Upload" name="submit">
