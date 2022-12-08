@@ -1,3 +1,9 @@
+<?php
+    $logEmail = $_POST['log-in-email'];
+    if(!isset($_COOKIE['userEmail'])){
+        setcookie('userEmail', $logEmail);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,14 +30,12 @@
     
                 if($stmt->fetch()){
                     //El login es correcto se muestra:
-                    include('../includes/header.php');
                     include('includes/log-correct-login.php');
                     include('../includes/footer.php');
                 } else {
                     //El login es incorrecto se muestra:
-                    include('../includes/header.php');
                     include('includes/log-incorrect-login.php');
-                    include('../includes/footer.php');
+                    include('includes/footer.php');
                 }
                 $stmt = null;
     
@@ -39,9 +43,8 @@
             }
         } else {
             //los posts han fallado o algo nose
-            include('../includes/header.php');
             include('includes/log-error.php');
-            include('../includes/footer.php');
+            include('includes/footer.php');
         }
     ?>
 </body>

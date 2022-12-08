@@ -19,7 +19,19 @@
                     <p></p>
                     <h1 class="upload-h1">Upload Image</h1>
                     <p></p>
-                    <input class="input" type="text" value="<?=$author?>" name="image-author" disabled/>
+                    <?php 
+                        if(isset($_COOKIE['userEmail'])){
+                            include('../includes/database-conn.php');
+                            $email = $_COOKIE['userEmail'];
+                            $stmt = $link->prepare("SELECT * FROM authors WHERE email='$email'");
+                            $stmt->bindColumn('name', $name);
+                            $stmt->execute();
+                            if(!$stmt->fetch()){
+                                echo "Error al realizar sequencia";
+                            }
+                        }
+                    ?>
+                    <input class="input" type="text" value="<?php echo $name?>" name="image-author" disabled/>
                     <input class="input" type="text" placeholder="Name" name="image-name" required/>
                     <input class="input" type="file" name="image" required accept="image/*"/>
                     <input class="input" type="text" placeholder="Text" name="image-text" required/>
@@ -30,5 +42,6 @@
         </div>
     </main>
     <?php include('../includes/footer.php') ?>
+    <?php include('../includes/database-close.php'); ?>
 </body>
 </html>

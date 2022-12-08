@@ -1,7 +1,7 @@
 <?php
     if(!isset($_COOKIE['logged'])){
         setcookie('logged', 'true');
-        setcookie('logInfo', );
+        setcookie('name', );
     } else {
         $isLogged = $_COOKIE['logged'];
     }
