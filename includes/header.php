@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/pages/sign.php">Log in</a>
+          <a class="nav-link" href="/gallery/sign.php">Log in</a>
         </li>
       </ul>
     </div>
