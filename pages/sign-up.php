@@ -23,7 +23,13 @@
         $result = $link->query($sql);
 
         if($result){
-            include('../pages/logged-in/loggedIndex.php');
+            include('../includes/header.php');
+            include('includes/log-success.php');
+            include('../includes/footer.php');
+        } else {
+            include('../includes/header.php');
+            include('includes/log-error.php');
+            include('../includes/footer.php');
         }
 
         include('includes/database-close.php');

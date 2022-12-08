@@ -11,10 +11,10 @@
           <a class="nav-link" href="../logged-in/upload.php">Upload</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../logged-in/gallery.php">See Gallery</a>
+          <a class="nav-link" href="../logged-in/gallery.php">See Full Gallery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../logged-in/modify.php">Modify</a>
+          <a class="nav-link" href="../../index.php">Exit</a>
         </li>
       </ul>
     </div>
