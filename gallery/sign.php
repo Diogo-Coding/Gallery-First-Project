@@ -1,3 +1,8 @@
+<?php
+    if(isset($_COOKIE['logged'])){
+        unset($_COOKIE['logged']);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

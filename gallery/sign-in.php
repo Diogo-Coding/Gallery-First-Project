@@ -22,7 +22,6 @@
                 $stmt = $link->prepare("SELECT * FROM `authors` WHERE email = '$logEmail' AND password='$logPassword'");
                 $stmt->execute();
     
-    
                 if($stmt->fetch()){
                     //El login es correcto se muestra:
                     include('../includes/header.php');
