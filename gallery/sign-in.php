@@ -20,9 +20,6 @@
                 $logPassword = $_POST['log-in-password'];
     
                 $stmt = $link->prepare("SELECT * FROM `authors` WHERE email = '$logEmail' AND password='$logPassword'");
-
-                $stmt->bindColumn('email', $email);
-                $stmt->bindColumn('password', $password);
                 $stmt->execute();
     
     

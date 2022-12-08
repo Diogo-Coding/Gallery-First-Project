@@ -12,30 +12,38 @@
 </head>
 <body>
 <?php
-    $createName = $_POST['create-name'];
-    $createEmail = $_POST['create-email'];
-    $createPassword = $_POST['create-password'];
 
-    if(isset($createName) && isset($createEmail) && isset($createPassword)){
+    if(isset($_POST['create-name']) && isset($_POST['create-email']) && isset($_POST['create-password'])){
         include('includes/database-conn.php');
 
-        $sql = "INSERT INTO `authors`(`name`, `email`, `password`,`enabled`) VALUES ('$createName','$createEmail','$createPassword','1')";
-        $result = $link->query($sql);
+        $createName = $_POST['create-name'];
+        $createEmail = $_POST['create-email'];
+        $createPassword = $_POST['create-password'];
 
-        if($result){
-            include('../includes/header.php');
-            include('includes/log-success.php');
-            include('../includes/footer.php');
+        $stmt = $link->prepare("SELECT * FROM authors WHERE email='$createEmail'");
+        $stmt->execute();
+        if(!$stmt->fetch()){
+            $sql = "INSERT INTO `authors`(`name`, `email`, `password`,`enabled`) VALUES ('$createName','$createEmail','$createPassword','0')";
+            $result = $link->query($sql);
+    
+            if($result){
+                include('../includes/header.php');
+                include('includes/log-create-success.php');
+                include('../includes/footer.php');
+            } else {
+                include('../includes/header.php');
+                include('includes/log-create-error.php');
+                include('../includes/footer.php');
+            }
         } else {
             include('../includes/header.php');
-            include('includes/log-error.php');
+            include('includes/log-already-created.php');
             include('../includes/footer.php');
         }
-
         include('includes/database-close.php');
     } else {
         include('../includes/header.php');
-        include('includes/log-error.php');
+        include('includes/log-create-error.php');
         include('../includes/footer.php');
     }
 ?>
