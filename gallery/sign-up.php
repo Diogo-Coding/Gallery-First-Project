@@ -1,5 +1,5 @@
 <?php 
-    $logEmail = $_POST['log-in-email'];
+    $logEmail = $_POST['create-email'];
     if(!isset($_COOKIE['userEmail'])){
         setcookie('userEmail', $logEmail);
     } else {

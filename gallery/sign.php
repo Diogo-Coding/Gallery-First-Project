@@ -1,10 +1,10 @@
 <?php
-    if(isset($_COOKIE['userEmail'])){
-        unset($_COOKIE['userEmail']);
-    }
-    if(isset($_COOKIE['logged'])){
-        unset($_COOKIE['logged']);
-    }
+	if(isset($_COOKIE['logged'])){
+		unset($_COOKIE['logged']);
+	}
+	if(isset($_COOKIE['userEmail'])){
+		unset($_COOKIE['userEmail']);
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
