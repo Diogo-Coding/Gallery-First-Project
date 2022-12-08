@@ -23,25 +23,30 @@
         $stmt = $link->prepare("SELECT * FROM authors WHERE email='$createEmail'");
         $stmt->execute();
         if(!$stmt->fetch()){
+            //Si no esta en la base de datos procedemos a crearlo
             $sql = "INSERT INTO `authors`(`name`, `email`, `password`,`enabled`) VALUES ('$createName','$createEmail','$createPassword','0')";
             $result = $link->query($sql);
     
             if($result){
+                //Si no da error insertar:
                 include('../includes/header.php');
                 include('includes/log-create-success.php');
                 include('../includes/footer.php');
             } else {
+                //Si da error insertar
                 include('../includes/header.php');
                 include('includes/log-create-error.php');
                 include('../includes/footer.php');
             }
         } else {
+            //Si el usuario ya esta creado con ese email
             include('../includes/header.php');
             include('includes/log-already-created.php');
             include('../includes/footer.php');
         }
         include('includes/database-close.php');
     } else {
+        //Si no va el post o algo nose
         include('../includes/header.php');
         include('includes/log-create-error.php');
         include('../includes/footer.php');
