@@ -30,7 +30,7 @@
                     <input class="input" type="email" placeholder="Email" name="create-email" required/>
                     <input class="input" type="password" placeholder="Password" name="create-password" required/>
                     <p></p>
-                    <input type="submit" class="sign" value="Sign Up">
+                    <input type="submit" class="sign" value="Sign Up" name="submit">
                 </form>
             </div>
             <div class="form-container sign-in-container">
@@ -48,7 +48,7 @@
                     <input class="input" type="password" placeholder="Password" name="log-in-password" required/>
                     <!-- <a href="#" class="link">Forgot your password?</a> -->
                     <p></p>
-                    <input type="submit" class="sign" value="Sign In">
+                    <input type="submit" class="sign" value="Sign In" name="submit">
                 </form>
             </div>
             <!-- Olvidarse de esto

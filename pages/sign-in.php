@@ -12,26 +12,37 @@
 </head>
 <body>
     <?php
-        $logEmail = $_POST['log-in-email'];
-        $logPassword = $_POST['log-in-password'];
+        if(isset($_POST['submit'])){
+            if(isset($_POST['log-in-email']) && isset($_POST['log-in-password'])){
+                include('includes/database-conn.php');
+    
+                $logEmail = $_POST['log-in-email'];
+                $logPassword = $_POST['log-in-password'];
+    
+                $stmt = $link->prepare("SELECT * FROM `authors` WHERE email = '$logEmail' AND password='$logPassword'");
 
-        if(isset($logEmail) && isset($logPassword)){
-            include('includes/database-conn.php');
-
-            $sql = "SELECT * FROM `authors` WHERE email = '$logEmail' AND password='$logPassword'";
-            $result = $link->query($sql);
-
-            if($result){
-                include('../includes/header.php');
-                include('includes/log-success.php');
-                include('../includes/footer.php');
+                $stmt->bindColumn('email', $email);
+                $stmt->bindColumn('password', $password);
+                $stmt->execute();
+    
+    
+                if($stmt->fetch()){
+                    include('../includes/header.php');
+                    include('includes/log-correct-login.php');
+                    include('../includes/footer.php');
+                } else {
+                    include('../includes/header.php');
+                    include('includes/log-incorrect-login.php');
+                    include('../includes/footer.php');
+                }
+                $stmt = null;
+    
+                include('includes/database-close.php');
             }
-
-            include('includes/database-close.php');
         } else {
             include('includes/database-conn.php');
             include('../includes/header.php');
-            include('includes/log-success.php');
+            include('includes/log-error.php');
             include('../includes/footer.php');
             include('includes/database-close.php');
         }
