@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+main {
+	background-image: url('/images/bg-08.jpg');
+	background-size: cover;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 89vh;
+	/* margin: -20px 0 50px; */
+}
+
+.info-img{
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.info-h1 {
+	font-weight: bold;
+	margin: 0;
+}
+
+.info-p {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 1px;
+	margin-top: 10px;
+}
+
+.info-span {
+	font-size: 14px;
+    margin-bottom: 15px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.link {
+	color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+}
+
+input.info {
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+.info-button{
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+button.info:active {
+	transform: scale(0.95);
+}
+
+button.info:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+
+.info-down {
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100%;
+	text-align: center;
+}
+.info-up {
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100%;
+	text-align: center;
+}
+
+.input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+
+.info-container {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 1000px;
+	max-width: 100%;
+	min-height: 400px;
+}
+
+.info2-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	/* transition: all 0.6s ease-in-out; */
+}
+
+.info-down-container {
+	left: 0;
+	width: 30%;
+	padding-left: 40px;
+	/* z-index: 2; */
+}
+
+
+.info-up-container {
+	left: 30%;
+    width: 70%;
+	/* z-index: 1; */
+}

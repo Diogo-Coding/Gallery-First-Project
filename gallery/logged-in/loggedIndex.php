@@ -22,27 +22,33 @@
     <?php include('../includes/headerON.php') ?>
     <main>
         <?php 
-            
+            include('../includes/database-conn.php');
+            $stmt = $link->prepare($sql  = "SELECT authors.name as author, images.name, images.text, images.id, images.file FROM authors INNER JOIN images on images.author_id = authors.id WHERE images.enabled = 1 ORDER BY images.id DESC;");
+            $stmt->bindColumn('author', $author);
+            $stmt->bindColumn('name', $imageName);
+            $stmt->bindColumn('text', $imageText);
+            $stmt->bindColumn('id', $imageID);
+            $stmt->bindColumn('file', $imageFile);
+            $stmt->execute();
+            $imgQuantity = 0;
+        ?>  
+        <?php
+            while($stmt->fetch(PDO::FETCH_BOUND)){   
+                if(($imgQuantity%4 == 0)){
+                    echo "</div>";
+                    echo "<div class='photo-container'>";
+                }
+                echo ' 
+                <div class="box">
+                    <a href="info.php?photo=' . $imageID . '&file=' . $imageFile . '"><img src="../../imagesuser/'. $imageFile .'" alt="' . $imageText . '"></a>        
+                    <span>'. $imageText . '</span>
+                    <span>Author: ' . $author . '</span>
+                </div>';
+                $imgQuantity++;
+            }
         ?>
-        <!-- <div class="photo-container">
-            <div class="box">
-                <img src="../../images/bg-01.jpg">
-                <span>Descripción</span>
-            </div>
-            <div class="box">
-                <img src="https://source.unsplash.com/1000x802">
-                <span>Descripción</span>
-            </div>
-            <div class="box">
-                <img src="https://source.unsplash.com/1000x804">
-                <span>Descripción</span>
-            </div>
-            <div class="box">
-                <img src="https://source.unsplash.com/1000x806">
-                <span>Descripción</span>
-            </div>
-        </div> -->
     </main>
     <?php include('../includes/footer.php') ?>
+    <?php include('../includes/database-close.php'); ?>
 </body>
 </html>

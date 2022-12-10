@@ -15,7 +15,7 @@
   line-height: 0;
 }
 
-.box > img {
+.box > a > img{
   width: 200%;
   height: calc(100% - 10vh);
   object-fit: cover; 
@@ -31,7 +31,7 @@
 }
 
 .box:hover { flex: 1 1 50%; }
-.box:hover > img {
+.box:hover > a > img {
   width: 100%;
   height: 100%;
 }

@@ -15,7 +15,7 @@
     <main>
         <div class="upload-container" id="container">
             <div class="form-container upload-up-container">
-                <form action="upload-up.php" class="upload-form" method="POST">
+                <form action="" class="upload-form" enctype="multipart/form-data" method="POST">
                     <p></p>
                     <h1 class="upload-h1">Upload Image</h1>
                     <p></p>
@@ -25,16 +25,41 @@
                             $email = $_COOKIE['userEmail'];
                             $stmt = $link->prepare("SELECT * FROM authors WHERE email='$email'");
                             $stmt->bindColumn('name', $name);
+                            $stmt->bindColumn('id',$id);
                             $stmt->execute();
                             if(!$stmt->fetch()){
                                 echo "Error al realizar sequencia";
                             }
+                            if (isset($_POST["submit"])) {
+                                
+                                if ( isset( $_POST['enabled'])){
+                                 $enabled = 1; }
+                                else {
+                                $enabled = 0; }
+                                $imagename =  $_POST['image-name'];
+                                $text =  $_POST['image-text'];
+                                try{
+                                move_uploaded_file( $_FILES["image"]["tmp_name"], "../../imagesuser/" . $_FILES["image"]["name"]);
+                                
+                                $fichero = $_FILES["image"]["name"];
+                                $size = $_FILES["image"]["size"];
+                                
+                                $stmt1 = $link->exec("INSERT into images( author_id, name, file, size, text, enabled) values( ".$id.", '".$imagename."', '".$fichero."', '".$size."', '".$text."', ".$enabled.")");
+                               
+                            }
+                                catch(Exception $e){echo "Se ha producido el siguiente error: " . $e->getMessage();}
+                                 }
                         }
                     ?>
                     <input class="input" type="text" value="<?php echo $name?>" name="image-author" disabled/>
                     <input class="input" type="text" placeholder="Name" name="image-name" required/>
-                    <input class="input" type="file" name="image" required accept="image/*"/>
+                    <input class="input" type="file" name="image" id="image" required accept="image/*"/>
                     <input class="input" type="text" placeholder="Text" name="image-text" required/>
+                    <label for="enabled">Enabled <input type="checkbox" name="enabled" id="enabled"></label>
+                    <?php
+                          
+                    ?>
+                       
                     <p></p>
                     <input type="submit" class="upload" value="Upload" name="submit">
                 </form>
