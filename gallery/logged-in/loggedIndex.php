@@ -31,20 +31,23 @@
             $stmt->bindColumn('file', $imageFile);
             $stmt->execute();
             $imgQuantity = 0;
-        ?>  
-        <?php
-            while($stmt->fetch(PDO::FETCH_BOUND)){   
-                if(($imgQuantity%4 == 0)){
-                    echo "</div>";
-                    echo "<div class='photo-container'>";
+
+            if($stmt->fetch()){
+                while($stmt->fetch(PDO::FETCH_BOUND)){   
+                    if(($imgQuantity%4 == 0)){
+                        echo "</div>";
+                        echo "<div class='photo-container'>";
+                    }
+                    echo ' 
+                    <div class="box">
+                        <a href="info.php?photo=' . $imageID . '&file=' . $imageFile . '"><img src="../../imagesuser/'. $imageFile .'" alt="' . $imageText . '"></a>        
+                        <span>'. $imageText . '</span>
+                        <span>Author: ' . $author . '</span>
+                    </div>';
+                    $imgQuantity++;
                 }
-                echo ' 
-                <div class="box">
-                    <a href="info.php?photo=' . $imageID . '&file=' . $imageFile . '"><img src="../../imagesuser/'. $imageFile .'" alt="' . $imageText . '"></a>        
-                    <span>'. $imageText . '</span>
-                    <span>Author: ' . $author . '</span>
-                </div>';
-                $imgQuantity++;
+            } else {
+                echo "<div class='no-photos'><h1>No hay fotos que mostrar, <a href='./upload.php'>subir una foto</a></h1></div>";
             }
         ?>
     </main>

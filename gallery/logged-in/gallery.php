@@ -29,23 +29,26 @@
             } else {
                 //Sentencia para mostrar las imagenes del usuario
                 $stmt1 = $link->prepare("SELECT * FROM images WHERE author_id = $id");
+                $stmt1->bindColumn('id',$photoID);
+                $stmt1->bindColumn('file',$file);
+                $stmt1->bindColumn('text',$text);
                 $stmt1->execute();
                 $imgQuantity = 0;
                 if($stmt1->fetch()){
-                    foreach ($stmt1 as $row) {
+                    while($stmt1->fetch(PDO::FETCH_BOUND)) {
                         if(($imgQuantity%4 == 0)){
                             echo "</div>";
                             echo "<div class='photo-container'>";
                         }
                         echo ' 
                         <div class="box">        
-                            <a href="modify.php?photo=' . $row['id'] . '"><img src="../../imagesuser/'.$row['file'].'" alt="' . $row['text'] . '"></a>
-                            <span>'.$row['text'].'</span>
+                            <a href="modify.php?photo=' . $photoID . '"><img src="../../imagesuser/'. $file .'" alt="' . $text . '"></a>
+                            <span>'.$text.'</span>
                         </div>';
                         $imgQuantity++;
                     }
                 } else {
-                    echo "<div class='no-photos'><h1>No hay fotos que mostrar, <a hreft='../upload'>subir una foto</a></h1></div>";
+                    echo "<div class='no-photos'><h1>No hay fotos que mostrar, <a href='./upload.php'>subir una foto</a></h1></div>";
                 }
             }
         }
