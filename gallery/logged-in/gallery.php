@@ -32,9 +32,9 @@
                 $stmt1->bindColumn('id',$photoID);
                 $stmt1->bindColumn('file',$file);
                 $stmt1->bindColumn('text',$text);
-                $stmt1->execute();
+                $result = $stmt1->execute();
                 $imgQuantity = 0;
-                if($stmt1->fetch()){
+                if($result != null){
                     while($stmt1->fetch(PDO::FETCH_BOUND)) {
                         if(($imgQuantity%4 == 0)){
                             echo "</div>";

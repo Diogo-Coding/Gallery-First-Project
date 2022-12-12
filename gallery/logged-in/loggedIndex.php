@@ -29,10 +29,10 @@
             $stmt->bindColumn('text', $imageText);
             $stmt->bindColumn('id', $imageID);
             $stmt->bindColumn('file', $imageFile);
-            $stmt->execute();
+            $result = $stmt->execute();
             $imgQuantity = 0;
 
-            if($stmt->fetch()){
+            if($result != null){
                 while($stmt->fetch(PDO::FETCH_BOUND)){   
                     if(($imgQuantity%4 == 0)){
                         echo "</div>";
