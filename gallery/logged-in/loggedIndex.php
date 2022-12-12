@@ -29,25 +29,20 @@
             $stmt->bindColumn('text', $imageText);
             $stmt->bindColumn('id', $imageID);
             $stmt->bindColumn('file', $imageFile);
-            $result = $stmt->execute();
+            $stmt->execute();
             $imgQuantity = 0;
-
-            if($result != null){
-                while($stmt->fetch(PDO::FETCH_BOUND)){   
-                    if(($imgQuantity%4 == 0)){
-                        echo "</div>";
-                        echo "<div class='photo-container'>";
-                    }
-                    echo ' 
-                    <div class="box">
-                        <a href="info.php?photo=' . $imageID . '&file=' . $imageFile . '"><img src="../../imagesuser/'. $imageFile .'" alt="' . $imageText . '"></a>        
-                        <span>'. $imageText . '</span>
-                        <span>Author: ' . $author . '</span>
-                    </div>';
-                    $imgQuantity++;
+            while($stmt->fetch(PDO::FETCH_BOUND)){   
+                if(($imgQuantity%4 == 0)){
+                    echo "</div>";
+                    echo "<div class='photo-container'>";
                 }
-            } else {
-                echo "<div class='no-photos'><h1>No hay fotos que mostrar, <a href='./upload.php'>subir una foto</a></h1></div>";
+                echo ' 
+                <div class="box">
+                    <a href="info.php?photo=' . $imageID . '&file=' . $imageFile . '"><img src="../../imagesuser/'. $imageFile .'" alt="' . $imageText . '"></a>        
+                    <span>'. $imageText . '</span>
+                    <span>Author: ' . $author . '</span>
+                </div>';
+                $imgQuantity++;
             }
         ?>
     </main>

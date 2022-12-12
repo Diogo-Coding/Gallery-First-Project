@@ -32,26 +32,23 @@
                 $stmt1->bindColumn('id',$photoID);
                 $stmt1->bindColumn('file',$file);
                 $stmt1->bindColumn('text',$text);
-                $result = $stmt1->execute();
+                $stmt1->execute();
                 $imgQuantity = 0;
-                if($result != null){
-                    while($stmt1->fetch(PDO::FETCH_BOUND)) {
-                        if(($imgQuantity%4 == 0)){
-                            echo "</div>";
-                            echo "<div class='photo-container'>";
-                        }
-                        echo ' 
-                        <div class="box">        
-                            <a href="modify.php?photo=' . $photoID . '"><img src="../../imagesuser/'. $file .'" alt="' . $text . '"></a>
-                            <span>'.$text.'</span>
-                        </div>';
-                        $imgQuantity++;
+                while($stmt1->fetch(PDO::FETCH_BOUND)) {
+                    if(($imgQuantity%4 == 0)){
+                        echo "</div>";
+                        echo "<div class='photo-container'>";
                     }
-                } else {
-                    echo "<div class='no-photos'><h1>No hay fotos que mostrar, <a href='./upload.php'>subir una foto</a></h1></div>";
+                    echo ' 
+                    <div class="box">        
+                        <a href="modify.php?photo=' . $photoID . '"><img src="../../imagesuser/'. $file .'" alt="' . $text . '"></a>
+                        <span>'.$text.'</span>
+                    </div>';
+                    $imgQuantity++;
                 }
             }
         }
+        
     ?>
     </main>
     <?php include('../includes/footer.php') ?>
