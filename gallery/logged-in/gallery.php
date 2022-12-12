@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +17,10 @@
     <?php include('../includes/headerON.php') ?>
     <main>
     <?php 
-        if(isset($_COOKIE['userEmail'])){
+        if(isset($_SESSION['userEmail'])){
             //Sentencia para sacar el id
             include('../includes/database-conn.php');
-            $email = $_COOKIE['userEmail'];
+            $email = $_SESSION['userEmail'];
             $stmt = $link->prepare("SELECT * FROM authors WHERE email='$email'");
             $stmt->bindColumn('id',$id);
             $stmt->execute();
@@ -27,21 +30,23 @@
                 //Sentencia para mostrar las imagenes del usuario
                 $stmt1 = $link->prepare("SELECT * FROM images WHERE author_id = $id");
                 $stmt1->execute();
-            }
-            $imgQuantity = 0;
-    ?>
-    <?php
-            foreach ( $stmt1 as $row) {
-                if(($imgQuantity%4 == 0)){
-                    echo "</div>";
-                    echo "<div class='photo-container'>";
+                $imgQuantity = 0;
+                if($stmt1->fetch()){
+                    foreach ($stmt1 as $row) {
+                        if(($imgQuantity%4 == 0)){
+                            echo "</div>";
+                            echo "<div class='photo-container'>";
+                        }
+                        echo ' 
+                        <div class="box">        
+                            <a href="modify.php?photo=' . $row['id'] . '"><img src="../../imagesuser/'.$row['file'].'" alt="' . $row['text'] . '"></a>
+                            <span>'.$row['text'].'</span>
+                        </div>';
+                        $imgQuantity++;
+                    }
+                } else {
+                    echo "<div class='no-photos'><h1>No hay fotos que mostrar, <a hreft='../upload'>subir una foto</a></h1></div>";
                 }
-                echo ' 
-                <div class="box">        
-                    <a href="modify.php?photo=' . $row['id'] . '"><img src="../../imagesuser/'.$row['file'].'" alt="' . $row['text'] . '"></a>
-                    <span>'.$row['text'].'</span>
-                </div>';
-                $imgQuantity++;
             }
         }
     ?>

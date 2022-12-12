@@ -1,9 +1,10 @@
-<?php 
+<?php
+    session_start();
     $logEmail = $_POST['create-email'];
-    if(!isset($_COOKIE['userEmail'])){
-        setcookie('userEmail', $logEmail);
+    if(!isset($_SESSION['userEmail'])){
+        $_SESSION['userEmail'] = $logEmail;
     } else {
-        setcookie('userEmail', $logEmail);
+        $_SESSION['userEmail'] = $logEmail;
     }
 ?>
 <!DOCTYPE html>

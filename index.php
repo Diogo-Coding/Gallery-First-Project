@@ -1,9 +1,7 @@
-<?php 
-	if(isset($_COOKIE['logged'])){
-		unset($_COOKIE['logged']);
-	}
-	if(isset($_COOKIE['userEmail'])){
-		unset($_COOKIE['userEmail']);
+<?php
+	session_start();
+	if(isset($_SESSION['logged']) || isset($_SESSION['userEmail'])){
+		session_destroy();
 	}
 ?>
 <!DOCTYPE html>

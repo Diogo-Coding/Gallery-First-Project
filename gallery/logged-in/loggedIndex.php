@@ -1,9 +1,9 @@
 <?php
-    if(!isset($_COOKIE['logged'])){
-        setcookie('logged', 'true');
-        setcookie('name', );
+    session_start();
+    if(!isset($_SESSION['logged'])){
+        $_SESSION['logged'] = 'on';
     } else {
-        $isLogged = $_COOKIE['logged'];
+        $isLogged = $_SESSION['logged'];
     }
 ?>
 <!DOCTYPE html>
